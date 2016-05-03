@@ -1,0 +1,40 @@
+<div class="table" ng-controller="userListControllers">
+    <div class="page-header">
+        <a href="javascript:void (0)" class="btn-default btn" ng-click="userAdd()">新增</a>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>user</th>
+            <th>createTime</th>
+            <!--<th>updateTime</th>-->
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in users" id="{{user._id}}">
+            <td><span ng-bind="user.name"></span></td>
+            <td><span ng-bind="user.email"></span></td>
+            <td><span ng-bind="user.phone"></span></td>
+            <td><span ng-bind="user.user"></span></td>
+            <td><span ng-bind="user.create_time"></span></td>
+            <!--<td>{{user.update_time}}</td>-->
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                        操作
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" >
+                        <li><a href="javascript:void (0)" ng-click="userUpdate(user._id)">修改</a></li>
+                        <li><a href="javascript:void (0)" ng-click="userDelete(user._id)">删除</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

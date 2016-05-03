@@ -1,0 +1,53 @@
+<form class="form-horizontal" ng-controller="userAddControllers">
+    <div class="form-group">
+        <label for="inputName" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="inputName" placeholder="Name" ng-model="user.name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+        <div class="col-sm-5">
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="user.email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPhone" class="col-sm-2 control-label">Phone</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="inputPhone" placeholder="Phone" ng-model="user.phone">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputUser" class="col-sm-2 control-label">User</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="inputUser" placeholder="User" ng-model="user.user">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-5">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password"
+                   ng-model="user.password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label">gender</label>
+        <div class="col-sm-5">
+            <div class="radio">
+                <label class="control-label">
+                    <input type="radio" value="0" ng-model="user.gender" name="gender"> girl
+                </label>
+                <label class="control-label">
+                    <input type="radio" value="1" ng-model="user.gender" name="gender"> man
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-5">
+            <button type="button" class="btn btn-default" ng-click="userSave()" ng-if="user._id == undefined">保存</button>
+            <button type="button" class="btn btn-default" ng-click="userModify()" ng-if="user._id != undefined">修改</button>
+            <a href="javascript:history.back(-1)" class="btn btn-default">返回</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,47 @@
+<form class="form-horizontal" ng-controller="purviewAddController">
+    <div class="form-group">
+        <label for="inputName" class="col-sm-2 control-label">Name</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="inputName" placeholder="Name" ng-model="purview.name">
+        </div>
+    </div>
+    <div class="form-group" ng-if="params.purviewChild">
+        <label for="inputStateName" class="col-sm-2 control-label">stateName</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="inputStateName" placeholder="Name" ng-model="purview.stateName">
+        </div>
+    </div>
+    <div class="form-group" ng-if="params.purviewChild">
+        <label for="inputUrl" class="col-sm-2 control-label">url</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="inputUrl" placeholder="url" ng-model="purview.url" readonly>
+        </div>
+    </div>
+    <div class="form-group" ng-if="params.purviewChild">
+        <label for="inputTemplateUrl" class="col-sm-2 control-label">templateUrl</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="inputTemplateUrl" placeholder="templateUrl"
+                   ng-model="purview.templateUrl">
+        </div>
+    </div>
+    <div class="form-group" ng-if="params.purviewChild">
+        <label class="col-sm-2 control-label">isMenu</label>
+        <div class="col-sm-5">
+            <div class="radio">
+                <label class="control-label">
+                    <input type="radio" value="0" ng-model="purview.isMenu" name="isMenu"> menu
+                </label>
+                <label class="control-label">
+                    <input type="radio" value="2" ng-model="purview.isMenu" name="isMenu"> function
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-5">
+            <button type="button" class="btn btn-default" ng-click="purviewSave()" ng-if="purview._id == undefined">保存</button>
+            <button type="button" class="btn btn-default" ng-click="purviewModify()" ng-if="purview._id != undefined">修改</button>
+            <a href="javascript:history.back(-1)" class="btn btn-default">返回</a>
+        </div>
+    </div>
+</form>

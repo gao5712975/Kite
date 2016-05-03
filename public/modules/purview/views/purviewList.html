@@ -1,0 +1,76 @@
+<div ng-controller="purviewListController">
+    <div class="page-header">
+        <a href="javascript:void (0)" class="btn-default btn" ng-click="purviewModuleAdd(false)">新增</a>
+    </div>
+    <div class="col-sm-3">
+        <!--<div ui-grid="gridOptionsModule" ui-grid-pagination class="grid"></div>
+        <nav> <ul class='pager'> <li><a href='javascript:void (0)' ng-click='gridApiModule.pagination.previousPage()'>Previous</a></li> <li><a href='javascript:void (0)' ng-click='gridApiModule.pagination.nextPage()'>Next</a></li> </ul> </nav>-->
+        <div class="table">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>name</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="purviewModule in purviewModules" id="{{purviewModule._id}}">
+                    <td>{{purviewModule.name}}</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                操作
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void (0)" ng-click="purviewUpdate(false,purviewModule._id)">修改</a></li>
+                                <li><a href="javascript:void (0)" ng-click="purviewChildAdd(true,purviewModule._id)">增子菜单</a></li>
+                                <li><a href="javascript:void (0)" ng-click="purviewChildSelect(purviewModule._id)">查看子菜单</a></li>
+                                <li><a href="javascript:void (0)" ng-click="purviewDelete(purviewModule._id)">删除</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <!--<div ui-grid="gridOptionsPurview" ui-grid-pagination class="grid"></div>-->
+        <!--<nav> <ul class='pager'> <li><a href='javascript:void (0)' ng-click='gridApiPurview.pagination.previousPage()'>Previous</a></li> <li><a href='javascript:void (0)' ng-click='gridApiPurview.pagination.nextPage()'>Next</a></li> </ul> </nav>-->
+
+        <div class="table">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>name</th>
+                    <th>stateName</th>
+                    <th>url</th>
+                    <th>templateUrl</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="purview in purviews" id="{{purview._id}}">
+                    <td><span ng-bind="purview.name"></span></td>
+                    <td><span ng-bind="purview.stateName"></span></td>
+                    <td><span ng-bind="purview.url"></span></td>
+                    <td><span ng-bind="purview.templateUrl"></span></td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+                                操作
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="javascript:void (0)" ng-click="purviewUpdate(true,purview._id,purview.parentId)">修改</a></li>
+                                <li><a href="javascript:void (0)" ng-click="purviewDelete(purview._id)">删除</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

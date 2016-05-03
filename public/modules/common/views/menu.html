@@ -1,0 +1,8 @@
+<ul class="nav nav-sidebar">
+    <li ng-class="{true:'active',false:''}[active[$index]]" ng-repeat="m in menus">
+        <a href="javascript:void(0)" ng-click="show($event)" index="{{$index}}">{{m.name}}</a>
+        <ul class="nav" ng-show="display[$index]">
+            <li ng-repeat="c in m.menus"><a ui-sref="{{c.stateName}}">{{c.name}}</a></li>
+        </ul>
+    </li>
+</ul>
