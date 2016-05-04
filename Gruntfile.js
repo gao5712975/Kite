@@ -9,8 +9,6 @@ var libCss = all.gruntConcat.lib.css.concat(all.gruntConcat.css);
  */
 var pathJs = all.assets.js[0];
 var pathCss = all.assets.css[0];
-var files = ['<%= concat.files %>','<%= uglify.files %>','<%= cssmin.files %>'];
-var tasks = ['concat','uglify','cssmin'];
 
 module.exports = function (grunt) {
     // Project configuration.
@@ -78,9 +76,9 @@ module.exports = function (grunt) {
     // 加载包含 "uglify" 任务的插件。
     grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-contrib-cssmin");
-    grunt.loadNpmTasks("grunt-contrib-concat");
+    // grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks('grunt-contrib-watch');
     // 默认被执行的任务列表。
-    grunt.registerTask("default", ["uglify","cssmin","concat"]);
+    grunt.registerTask("default", ["uglify","cssmin"]);
     grunt.registerTask("watch", ["watch"]);
 };

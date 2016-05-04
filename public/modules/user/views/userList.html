@@ -20,8 +20,7 @@
             <td><span ng-bind="user.email"></span></td>
             <td><span ng-bind="user.phone"></span></td>
             <td><span ng-bind="user.user"></span></td>
-            <td><span ng-bind="user.create_time"></span></td>
-            <!--<td>{{user.update_time}}</td>-->
+            <td><span ng-bind="user.create_time | dateFormat"></span></td>
             <td>
                 <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">

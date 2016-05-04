@@ -23,8 +23,6 @@ module.exports = function (db) {
     // Initialize express app
     var app = express();
 
-
-
     // Showing stack errors
     app.set('showStackError', false);
 

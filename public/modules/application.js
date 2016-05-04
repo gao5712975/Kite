@@ -62,4 +62,13 @@ angular.module(ApplicationConfig.moduleName, ApplicationConfig.moduleDependencie
             /**end*/
         }
     ]
-);
+    )
+    .filter("dateFormat", function () {
+        return function (input) {
+            input = new Date(input);
+            var year = input.getFullYear();
+            var month = input.getMonth()+1;
+            var day = input.getDay();
+            return year + '-' + month + '-' +day;
+        }
+    })

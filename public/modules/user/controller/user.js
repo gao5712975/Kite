@@ -60,6 +60,7 @@ angular.module("userModule").controller("userListControllers",
             $scope.param = {};
             UserFactory.userList()
                 .success(function (data, status, headers, config) {
+                    console.info(data);
                     $scope.users = data;
                 });
 

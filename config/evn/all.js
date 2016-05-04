@@ -41,11 +41,34 @@ module.exports = {
         ]
     },
     assets: {
-        css: [
+        /*css: [
             "public/build/all.css"
         ],
         js: [
             "public/build/all.js"
+        ]*/
+        lib: {
+            css: [
+                "libs/bootstrap/dist/css/bootstrap-theme.min.css",
+                "libs/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            js: [
+                "libs/lodash/dist/lodash.min.js",
+                "libs/jquery/dist/jquery.min.js",
+                "libs/angular/angular.min.js",
+                "libs/bootstrap/dist/js/bootstrap.min.js",
+                "libs/angular-cookies/angular-cookies.min.js",
+                "libs/angular-ui-router/release/angular-ui-router.min.js"
+            ]
+        },
+        css: [
+            "public/build/**/css/*.css"
+        ],
+        js: [
+            "public/build/config.js",
+            "public/build/application.js",
+            "public/build/*/*.js",
+            "public/build/*/*[!tests]*/*.js"
         ]
     }
 };

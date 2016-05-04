@@ -45,14 +45,14 @@ module.exports.getGlobbedFiles = function(globPatterns, removeRoot) {
  * Get the modules JavaScript files
  */
 module.exports.getJavaScriptAssets = function() {
-    //return this.getGlobbedFiles(this.assets.lib.js.concat(this.assets.js));
-    return this.getGlobbedFiles(this.assets.js);
+    return this.getGlobbedFiles(this.assets.lib.js.concat(this.assets.js));
+    // return this.getGlobbedFiles(this.assets.js);
 };
 
 /**
  * Get the modules CSS files
  */
 module.exports.getCSSAssets = function() {
-    //return this.getGlobbedFiles(this.assets.lib.css.concat(this.assets.css));
-    return this.getGlobbedFiles(this.assets.css);
+    return this.getGlobbedFiles(this.assets.lib.css.concat(this.assets.css));
+    // return this.getGlobbedFiles(this.assets.css);
 };
